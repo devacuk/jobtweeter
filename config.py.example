@@ -1,0 +1,7 @@
+# sign up as a Twitter developer and register a new app at apps.twitter.com to obtain your own key / secrets / tokens
+
+CONSUMER_KEY = '...'
+CONSUMER_SECRET = '...'
+ACCESS_TOKEN = '...'
+ACCESS_TOKEN_SECRET = '...'
+
