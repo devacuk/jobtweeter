@@ -3,6 +3,7 @@
 # Martin Hamilton <martin.hamilton@jisc.ac.uk> for dev.ac.uk
 
 from lxml.html.soupparser import fromstring	# the most lenient parser?
+from slackclient import SlackClient		# Slack API
 from selenium import webdriver 			# remote control browser, take screenshots
 from PIL import Image 				# image manipulation
 import requests					# URL fetcher
@@ -59,5 +60,12 @@ auth.set_access_token(cfg.ACCESS_TOKEN, cfg.ACCESS_TOKEN_SECRET)
 api = tweepy.API(auth)
 api.update_with_media('screenshot.png', updatetext)
 
-# TODO: Call out to Slack API to update #jobs on the dev.ac.uk Slack
-
+# And post it on the #jobs channel on our devacuk Slack instance
+sc = SlackClient(cfg.SLACK_VERIFICATION_TOKEN)
+print sc.api_call(
+  'files.upload', 
+  channels='jobs', 
+  title=updatetext,
+  is_public=True,
+  file=open('screenshot.png', 'rb'),
+)
