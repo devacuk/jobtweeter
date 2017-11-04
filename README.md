@@ -21,5 +21,4 @@ tweet_job.py uses Soupparser to sloppily match key fields from the job listing, 
 - Support for a wider range of job listing sources / sites - or maybe we keep this to just ac.uk related jobs ?
 - Ability to run headless - some clues here: https://duo.com/blog/driving-headless-chrome-with-python ?
 - Hard coded file names, e.g. "screenshot.png" - could put these in the config file ?
-- Smarts to truncate e.g. text in brackets if it's making our Tweet too long
 - More developer jargon for our list :-)
