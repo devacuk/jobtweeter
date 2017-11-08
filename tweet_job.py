@@ -52,10 +52,12 @@ im.save('screenshot.png')			# saves new cropped image
 
 # Line up a tweet about this job
 tweet_text = "Job opportunity: {0} at {1}, {2} {3} #devacuk via @jobsacuk".format(role, institution, ft, URL)
-if len(tweet_text) > 140:
+if len(tweet_text) > 280:
   tweet_text = "Job opportunity: {0} at {1}, {2} #devacuk via @jobsacuk".format(role, institution, URL)
-if len(tweet_text) > 140:
+if len(tweet_text) > 280:
   tweet_text = "Job opportunity: {0} {1} #devacuk via @jobsacuk".format(role, URL)
+if len(tweet_text) > 280:
+  tweet_text = "Job opportunity: {0} {1} #devacuk @jobsacuk".format(role, URL)
 print "Tweet: " + tweet_text
 
 # Line up a Slack post about this job
