@@ -45,7 +45,7 @@ driver.quit()
 im = Image.open('screenshot.png')		# uses PIL library to open image in memory
 left = int(location['x'])
 top = int(location['y'])
-right = 650					# hard coded to match jobs.ac.uk content area
+right = 700					# hard coded to match jobs.ac.uk content area
 bottom = 670					# hard coded to match jobs.ac.uk content area
 im = im.crop((left, top, right, bottom))	# defines crop points
 im.save('screenshot.png')			# saves new cropped image
